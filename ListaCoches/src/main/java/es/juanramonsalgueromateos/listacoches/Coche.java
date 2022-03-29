@@ -1,6 +1,7 @@
-package es.juanramonsalgueromateos.listalibros;
+package es.juanramonsalgueromateos.listacoches;
 
 public class Coche {
+    
     private String marca;
     private String modelo;
     private String bastidor;

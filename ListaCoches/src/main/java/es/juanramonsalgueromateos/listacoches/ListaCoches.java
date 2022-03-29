@@ -1,16 +1,21 @@
 package es.juanramonsalgueromateos.listacoches;
 
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlElement;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class ListaCoches {
-   ArrayList<Coche> ListaCoches = new ArrayList();
+    
+    private ArrayList<Coche> listaCoches = new ArrayList();
     
     public ArrayList<Coche> getListaCoches() {
-        return ListaCoches;
+        return listaCoches;
     }
     
+    @XmlElement(name = "coches")
     public void setListaCoches(ArrayList<Coche> ListaCohes) {
-        this.ListaCoches = ListaCoches;
+        this.listaCoches = listaCoches;
     } 
 }
