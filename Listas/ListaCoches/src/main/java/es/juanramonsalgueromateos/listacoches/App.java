@@ -65,10 +65,22 @@ public class App extends Application {
         //Se crea boton para pasar de un coche a otro utilizandolo como índice.
         Button botonSiguienteCoche = new Button("Siguiente");
         root.getChildren().add(botonSiguienteCoche);
+        botonSiguienteCoche.setOnAction((ActionEvent t) -> {
+            for(int i=0; i<coches.getCoches().size(); i++) {
+                String Mostrar;
+                Mostrar = coches.getCoches().get(0).getMarca();
+                Mostrar = Mostrar + " " + coches.getCoches().get(0).getModelo();
+                Mostrar = Mostrar + " " +coches.getCoches().get(0).getMatricula();
+                System.out.println(Mostrar);
+            }
+        });
 
         //Se crea boton para pasar de un coche a otro utilizandolo como índice.        
         Button botonAnteriorCoche = new Button("Anterior");
         root.getChildren().add(botonAnteriorCoche);
+        botonAnteriorCoche.setOnAction((ActionEvent t) -> {
+            
+        });
         
         
     }

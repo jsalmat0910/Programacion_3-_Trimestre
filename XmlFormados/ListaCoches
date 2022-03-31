@@ -31,4 +31,35 @@
         <numPuertas>5</numPuertas>
         <precio>35000.0</precio>
     </coches>
+    <coches>
+        <bastidor>1HGBH41JXMN109186</bastidor>
+        <fechaFabricacion>2006/01/21</fechaFabricacion>
+        <marca>OPEL</marca>
+        <matricula>4562JKL</matricula>
+        <modelo>Corsa</modelo>
+        <numPuertas>3</numPuertas>
+        <precio>1500.0</precio>
+    </coches>
+    <coches>
+        <numPuertas>0</numPuertas>
+        <precio>0.0</precio>
+    </coches>
+    <coches>
+        <bastidor>2RGBT41JXHJ254585</bastidor>
+        <fechaFabricacion>2005/10/05</fechaFabricacion>
+        <marca>RENAULT</marca>
+        <matricula>1214HJU</matricula>
+        <modelo>Kangoo</modelo>
+        <numPuertas>5</numPuertas>
+        <precio>0.0</precio>
+    </coches>
+    <coches>
+        <bastidor>VF7S6NFXB57818400</bastidor>
+        <fechaFabricacion>2020/05/10</fechaFabricacion>
+        <marca>VOLKSWAGEN</marca>
+        <matricula>9878LMH</matricula>
+        <modelo>Golf</modelo>
+        <numPuertas>3</numPuertas>
+        <precio>21000.0</precio>
+    </coches>
 </coches>
