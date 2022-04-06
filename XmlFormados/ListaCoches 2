@@ -10,10 +10,6 @@
         <precio>1500.0</precio>
     </coches>
     <coches>
-        <numPuertas>0</numPuertas>
-        <precio>0.0</precio>
-    </coches>
-    <coches>
         <bastidor>2RGBT41JXHJ254585</bastidor>
         <fechaFabricacion>2005/10/05</fechaFabricacion>
         <marca>RENAULT</marca>
@@ -30,5 +26,14 @@
         <modelo>Golf</modelo>
         <numPuertas>3</numPuertas>
         <precio>21000.0</precio>
+    </coches>
+    <coches>
+        <bastidor>HGCM82633A004352</bastidor>
+        <fechaFabricacion>2016/09/20</fechaFabricacion>
+        <marca>SUZUKI</marca>
+        <matricula>9878LMH</matricula>
+        <modelo>SWIFT</modelo>
+        <numPuertas>3</numPuertas>
+        <precio>0.0</precio>
     </coches>
 </coches>

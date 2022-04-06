@@ -2,6 +2,7 @@ package es.juanramonsalgueromateos.listacoches;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -37,7 +38,7 @@ public class App extends Application {
         
         //Coches añadidos para relaizar el XML.
         Coche coche1 = new Coche("Opel", "Astra", "1HGBH41JXMN109186", "1889FRM", "2006/01/21", 5, (float)3500);
-        Coche coche2 = new Coche();
+        Coche coche2 = new Coche("Peugeot", "206", "LJCPCBLCX11000237", "1478FLM", "2002/8/15", 3);
         Coche coche3 = new Coche("Renault", "Clio", "2RGBT41JXHJ254585", "1478FLM", "2005/10/05", 3);
         Coche coche4 = new Coche("Volkswagen", "Arteon", "VF7S6NFXB57818400", "7828KRB", "2018/05/10", 5, (float)35000);
         
@@ -54,6 +55,8 @@ public class App extends Application {
         Label texto = new Label();
         texto.setAlignment(Pos.TOP_CENTER);
         texto.setStyle(STYLESHEET_MODENA);
+        texto.setStyle("-fx-border-color: LIGHTBLUE;");
+        texto.setText(coches.getCoches().get(cocheActual).toString());
         vRoot.getChildren().add(texto);
 
         
