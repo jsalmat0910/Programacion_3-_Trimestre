@@ -34,6 +34,7 @@ public class App extends Application {
         vRoot.setStyle("-fx-background-color: CORNFLOWERBLUE");
         var scene = new Scene(vRoot, 300, 250);
         stage.setScene(scene);
+        stage.setTitle("CONCESIONARIO");
         stage.show();
         
         //Coches añadidos para relaizar el XML.
