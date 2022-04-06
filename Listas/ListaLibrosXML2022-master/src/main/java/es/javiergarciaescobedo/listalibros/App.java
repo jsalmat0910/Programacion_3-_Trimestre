@@ -36,7 +36,7 @@ public class App extends Application {
         //int[] listaNum = new int[10];
         //Libro[] listaLibros = new Libro[10];
         
-        Libros listaLibros = new Libros();
+        ListaLibros listaLibros = new ListaLibros();
         listaLibros.getListaLibros().add(libro1);
         listaLibros.getListaLibros().add(libro2);
         listaLibros.getListaLibros().add(libro3);       

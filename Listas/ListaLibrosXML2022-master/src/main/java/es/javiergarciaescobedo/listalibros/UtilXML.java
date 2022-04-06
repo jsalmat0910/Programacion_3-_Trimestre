@@ -9,15 +9,15 @@ import javax.xml.bind.Marshaller;
 
 public class UtilXML {
     
-    public static void guardarDatosXML(Stage stage, Libros listaLibros) {
+    public static void guardarDatosXML(Stage stage, ListaLibros listaLibros) {
         JAXBContext contexto;
         try {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Guardar XML en");
             File fileListaLibros = fileChooser.showSaveDialog(stage);
 
-            //File fileListaLibros = new File("Libros.xml");
-            contexto = JAXBContext.newInstance(Libros.class);
+            //File fileListaLibros = new File("ListaLibros.xml");
+            contexto = JAXBContext.newInstance(ListaLibros.class);
             Marshaller marshaller = contexto.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(listaLibros, System.out);
@@ -27,4 +27,5 @@ public class UtilXML {
             ex.printStackTrace();
         }            
     }
+    
 }

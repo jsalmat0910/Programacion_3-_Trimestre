@@ -19,6 +19,9 @@ public class Coches {
     
     public void fusionCoches(Coches cochesNuevos){
         this.getCoches().addAll(cochesNuevos.getCoches());
+        for (int i = 0; i < cochesNuevos.getCoches().size(); i++){
+            this.getCoches().add(cochesNuevos.getCoches().get(i));
+        }
     }
     
 //    public static void fusionCoches(Coches cochesOrigen, Coches cochesNuevos){
