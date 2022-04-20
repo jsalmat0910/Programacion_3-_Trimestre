@@ -121,6 +121,7 @@ public class App extends Application {
         });
         hbox.getChildren().add(cajaAño);
         
+        //Mostrar hbox en pantalla.
         root.getChildren().add(hbox);
         
     }
