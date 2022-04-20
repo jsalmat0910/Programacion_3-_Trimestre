@@ -1,14 +1,15 @@
 package es.juanramonsalgueromateos.vehiculosnuevos.csv;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -21,14 +22,57 @@ public class App extends Application {
     public void start(Stage stage) {
         var javaVersion = SystemInfo.javaVersion();
         var javafxVersion = SystemInfo.javafxVersion();
-
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
+        VBox root = new VBox();
+        root.setAlignment(Pos.CENTER);
+        var scene = new Scene(root, 640, 480);
         stage.setScene(scene);
         stage.show();
         
-        String nombreFichero = "vehiculos-nuevos-tipo.csv";
+        String nombreFichero = "vehículos-nuevos-tipo-compartir.csv";
         
+    //Se leen los datos del CSV seleccionado.
+        // Declarar una variable BufferedReader
+        BufferedReader br = null;
+        try {
+            // Crear un objeto BufferedReader al que se le pasa 
+            //   un objeto FileReader con el nombre del fichero
+            br = new BufferedReader(new FileReader(nombreFichero));
+            // Leer la primera línea, guardando en un String
+            String texto = br.readLine();
+            // Repetir mientras no se llegue al final del fichero
+            while(texto != null) {
+                String[] valores = texto.split(",");
+                String coches = valores[3];
+                System.out.println(coches);
+                // Leer la siguiente línea
+                texto = br.readLine();
+            }
+        }
+        // Captura de excepción por fichero no encontrado
+        catch (FileNotFoundException ex) {
+            System.out.println("Error: Fichero no encontrado");
+            ex.printStackTrace();
+        }
+        // Captura de cualquier otra excepción
+        catch(Exception ex) {
+            System.out.println("Error de lectura del fichero");
+            ex.printStackTrace();
+        }
+        // Asegurar el cierre del fichero en cualquier caso
+        finally {
+            try {
+                // Cerrar el fichero si se ha podido abrir
+                if(br != null) {
+                    br.close();
+                }
+            }
+            catch (Exception ex) {
+                System.out.println("Error al cerrar el fichero");
+                ex.printStackTrace();
+            }
+        }
+    /*    
+    //Escribe sobre el CSV elegido.
         String texto = "Texto de prueba";
         BufferedWriter bw = null;
         try {
@@ -54,7 +98,31 @@ public class App extends Application {
                 System.out.println("Error al cerrar el fichero");
                 ex.printStackTrace();
             }
-        }
+        }*/
+        
+        HBox hbox = new HBox();
+        hbox.setAlignment(Pos.CENTER);
+        
+        //Creacion del label donde se muestra la informacion seleccionada.
+        Label seleccionado = new Label("Hola");
+        root.getChildren().add(seleccionado);
+        
+        //Creacion de la caja donde se selecciona lo deseado de la lista de los tipos de coches.
+        ComboBox<String> cajaTipoCoche = new ComboBox();
+        cajaTipoCoche.setOnAction((t) -> {
+            seleccionado.setText(cajaTipoCoche.getValue());
+        });
+        hbox.getChildren().add(cajaTipoCoche);
+        
+        //Creacion de la caja donde se selecciona lo deseado de la lista de los años.
+        ComboBox<String> cajaAño = new ComboBox();
+        cajaAño.setOnAction((t) -> {
+            seleccionado.setText(cajaAño.getValue());
+        });
+        hbox.getChildren().add(cajaAño);
+        
+        root.getChildren().add(hbox);
+        
     }
 
     public static void main(String[] args) {
